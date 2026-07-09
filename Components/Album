@@ -1,0 +1,90 @@
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Example: [https://www.churchofjesuschrist.org/comeuntochrist/easter/holy-week](https://www.churchofjesuschrist.org/comeuntochrist/easter/holy-week "smart-link")<br><br>Describing the CUC component, any clickable component can trigger a drawer. They do it as 2 components – a tile/button and a drawer that can be attached to any component.<br><br>We will create a new component that can be used to display the closed state as either a button, a button accompanied by some text, or a poster image with a button/link to open the hidden content.<br><br>We will use a 1 column container for what goes in the hidden content section.<br><br>**Figma:**<br><br>[https://www.figma.com/design/XPrhjjI1kJWtfoHlnB0DQv/Friend-Container-Component-Audit?node-id=3975-6886&p=f&t=6nVlMf7NYHUBSnOR-0](https://www.figma.com/design/XPrhjjI1kJWtfoHlnB0DQv/Friend-Container-Component-Audit?node-id=3975-6886&p=f&t=6nVlMf7NYHUBSnOR-0 "smart-link")<br><br>### Back End Requirements<br><br>- Create a new component called “Page Promo Show/Hide”. The fields are a bit different from other Page Promos.<br><br>- Title (not required)<br>- Description (instead of Kicker) not required<br>- Image (not required)<br>- Text Overlay (not required)<br>- CTA Button Text (not required)<br>- Button Alt Text (not required)<br><br>- Note: “Allows screen readers to explain what the button does”<br><br>- Add Module<br><br>- Add modules that will go in the one-column container. This is the content that is hidden on page load.<br><br>- This component will only be available to the Friend Container site and Welcome site. But we will NOT add it to the Missionary Package.<br><br>### Style Tab Requirements<br><br>- Vertical Spacing<br><br>- Single select dropdown. <br>- Options are None (0px), 4px, 8px, Unite (16px), Related (32px), Separated Small (64px), 96px, Separated Large (128px)<br>- Default to Separated Small (64px).<br><br>- Heading Text Alignment<br><br>- Single select dropdown. <br>- Options are Start, Center, End<br>- Default to Start.<br><br>- Title Style<br><br>- Single select dropdown<br>- Options are H2 and H3<br>- Default to H3<br><br>- Component Width<br><br>- Single select dropdown. <br>- Options are Read (672px), Pop (1024px), Plus (1600px)<br>- Default to Pop.<br><br>- Hide from In Page Navigation (Boolean) Default to False<br>- Text Overlay Vertical Alignment<br><br>- Single select dropdown.<br>- Options are Top, Middle, Bottom.<br>- Default to Bottom<br>- Instructions: “The text overlay is displayed over the image.”<br><br>- Text Overlay Horizontal Alignment<br><br>- Single select dropdown<br>- Options are Start, Center, End<br>- Default to Start<br><br>- Image Aspect Ratio<br><br>- Single select dropdown. <br>- Options are 4x1 (shortest), 2.4x1 (short), 16x9 (normal), 4x3 (tall), 1x1 (taller), 3x4 (tallest), Original<br>- Default to 16x9 (normal)<br><br>- Button Style<br><br>- Single select dropdown<br>- Options are Primary, Secondary, Transparent, Standard link, Emphasized Link<br>- Default to Primary.<br><br>- Button Alignment<br><br>- Single select dropdown.<br>- Options are Start, Center, End<br>- Default to End.<br><br>- Button Color<br><br>- Single select dropdown.<br>- Options are Blue and Orange, Theme Color<br>- Default to Blue<br><br>- Add Chevron To Button<br><br>- Boolean, default to False<br>- Note: This adds a chevron icon to the button to show open and closed states.<br><br>- Background Color<br><br>- Single select dropdown. <br>- Options are White and Light Gray.<br>- Default to White. <br><br>- Background Color Top Padding<br><br>- Single select dropdown<br>- Options are 0px, 8px, 16px, 32px, and 64px.<br>- Default value is 32px (UX Design question)<br><br>- Background Color Bottom Padding<br><br>- Single select dropdown<br>- Options are 0px, 8px, 16px, 32px, and 64px.<br>- Default value is 32px (UX Design question)<br><br>- Create/update view models as necessary. |
+
+### Sub-Components Used
+
+None.
+
+  
+
+### FIelds
+
+- Pre Title (tiny text, not required)
+- Title (tiny text, required)
+- Subtitle (tiny text, not required
+- Description (tiny text, required)
+- Performers (search select, not required)
+    - Search is restricted to Persons.
+- Cover Art (search select, not required)
+    - Search is restricted to Image and Titan Image.
+- Tracks
+    - Track Number (text entry, required)
+    - Audio Track (search select, required)
+        - Search is restricted to Audio and Titan Audio.
+    - Title Override (text entry, not required)
+    - Performer (text entry, not required)
+    - Alternate Renditions 
+        - Source (search select, not required)
+            - Search is restricted to all media types.
+        - Alternate rendition Label (search select, not required)
+            - Search is restricted to Alternate Rendition Labels.
+- Album Download (single select dropdown, not required)
+    - Options are External Reference, Internal Reference, Modal, and Site Search
+
+### Style Options
+
+- Background Color
+    - Single select dropdown
+    - Options are
+        - White
+        - Light Gray
+        - Blue (MS Use Only)
+            
+        - Dark Blue (MS Use Only)
+            
+        - Light Yellow (MS Use Only)
+            
+        - Medium Gray (MS Use Only)
+            
+        - Dark Gray (MS Use Only)
+            
+    - Default is White
+- Background Color Top Padding
+    
+    - Single select dropdown
+        
+    - Options are 0px, 8px, 16px, 32px, and 64px
+        
+    - Default value is 32px
+        
+- Background Color Bottom Padding
+    
+    - Single select dropdown
+        
+    - Options are 0px, 8px, 16px, 32px, and 64px
+        
+    - Default value is 32px 
+        
+- Component Width 
+    - Single select dropdown. 
+    - Options are Read (672px) and Pop (1024px)
+    - Default is Read
+- Vertical Spacing
+    - Single select dropdown
+    - Options are None (0px), Unite (16px), Related (32px), Separated Small (64px), Separated Large (128px), 4px, 8px, and 96px
+    - Default is Separated Small (64px)
+- Hide from In Page Navigation (boolean, default to false)
+- Hide Title (boolean, default to false)
+- Heading Text Alignment
+    - Single select dropdown
+    - Options are Start, Center, End
+    - Default is Start
+
+### States
+
+None.
+
+### Front End Requirements
+
+None.
